@@ -1,0 +1,16 @@
+public class Solution {
+    public int[] SortArrayByParity(int[] nums) 
+    {
+        int[] newArray = new int[nums.Length];
+        int evenIndex = 0;
+        int oddIndex = nums.Length - 1;
+
+        foreach(int i in nums)
+        {
+            if (i % 2 == 0) newArray[evenIndex++] = i;
+            else newArray[oddIndex--] = i;
+        }
+        
+         return newArray;
+    }
+}
