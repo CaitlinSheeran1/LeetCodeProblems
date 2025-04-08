@@ -1,0 +1,25 @@
+public class Solution {
+    public int MaxNumberOfBalloons(string text) {
+        Dictionary<char, double> dic = new Dictionary<char, double>();
+        dic.Add('b', 0);
+        dic.Add('a', 0);
+        dic.Add('l', 0);
+        dic.Add('o', 0);
+        dic.Add('n', 0);
+
+        for (int i = 0; i < text.Length; i++)
+        {
+            if(dic.ContainsKey(text[i]))
+            {
+                if(text[i] == 'l' || text[i] == 'o')
+                {
+                    dic[text[i]] += 0.5;
+                }
+                else dic[text[i]] += 1;
+            }
+        }
+        int smallest = (int)dic.Min(pair => pair.Value);
+        
+        return smallest;
+    }
+}
