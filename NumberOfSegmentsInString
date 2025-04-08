@@ -1,0 +1,15 @@
+public class Solution {
+    public int CountSegments(string s) 
+    {
+        int counter = 0;
+
+        if (string.IsNullOrWhiteSpace(s)) return 0;
+
+        string trim = s.Trim();
+        string[] words = trim.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+
+        return words.Length;
+
+        
+    }
+}
