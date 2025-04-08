@@ -1,0 +1,25 @@
+public class Solution {
+    public string MergeAlternately(string word1, string word2)
+     {
+        StringBuilder newWord = new StringBuilder();
+
+        int i = 0;
+        int j = 0;
+
+        while (i < word1.Length || j < word2.Length)
+        {
+            if (i < word1.Length)
+            {
+                newWord.Append(word1[i]);
+                i++;
+            }
+            if (j < word2.Length)
+            {
+                newWord.Append(word2[j]);
+                j++;
+            }
+        }
+        return newWord.ToString();
+
+    }
+}
