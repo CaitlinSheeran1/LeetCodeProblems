@@ -1,0 +1,21 @@
+public class Solution {
+    public int CalPoints(string[] operations) {
+
+        List<int> numbers = new List<int>();
+
+        foreach (string i in operations)
+        {
+            if (i == "+") numbers.Add(numbers[numbers.Count -1] + numbers[numbers.Count -2]);
+            else if (i == "D") numbers.Add(numbers[numbers.Count -1] * 2);
+            else if (i == "C") numbers.Remove(numbers[numbers.Count -1]);
+            else numbers.Add(Convert.ToInt32(i));
+        }
+        
+        int total = 0;
+        foreach(int i in numbers)
+        {
+            total += i;
+        }
+        return total;
+    }
+}
