@@ -1,0 +1,21 @@
+public class Solution {
+    public int CountStudents(int[] students, int[] sandwiches) 
+    {
+        int[] count = new int[2];
+        int i = 0;
+        
+
+        foreach (int a in students) count[a]++;
+
+        while (i < sandwiches.Length)
+        {
+            if (count[sandwiches[i]] == 0 ) break;
+
+            count[sandwiches[i]]--;
+
+            i++;
+        }
+        return students.Length - i;
+
+    }
+}
