@@ -1,0 +1,25 @@
+public class Solution {
+    public int MajorityElement(int[] nums) 
+    {
+        Dictionary<int, int> dict = new Dictionary<int,int>();
+
+        foreach(int i in nums)
+        {
+            if(!dict.ContainsKey(i)) dict.Add(i,1);
+            else dict[i]++;
+        }
+        int value = 0;
+        int key = 0;
+
+        foreach (var i in dict)
+        {
+            if (i.Value > value)
+            {
+                value = i.Value;
+                key = i.Key;
+            }
+        }
+
+        return key;
+    }
+}
