@@ -1,0 +1,17 @@
+public class Solution {
+    public int LengthOfLastWord(string s) {
+
+        string trim = s.Trim();
+
+        int counter = 0;
+        for(var i = trim.Length -1; i >= 0; i--)
+        {
+            if (trim[i] != ' ') counter++;
+            else if(counter > 0) break;
+        }
+        return counter;
+
+
+        
+    }
+}
